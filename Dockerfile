@@ -9,7 +9,7 @@ COPY frontend .
 
 RUN apk add pnpm && \
     CI=true pnpm install && \
-    VITE_API_BASE_URL=http://localhost:8400/api pnpm build
+    VITE_API_BASE_URL=/api pnpm build
 
 # Build backend image that also serves frontend (stored in `/app/frontend-dist`)
 FROM python:3.14-alpine3.22
@@ -32,9 +32,6 @@ RUN uv sync --no-dev --locked
 COPY --from=builder /app/dist /app/frontend-dist
 
 EXPOSE 8400
-
-HEALTHCHECK --interval=3s --timeout=5s --retries=10 \
-    CMD ["wget", "-O", "/dev/null", "http://0.0.0.0:8400/ping"]
 
 CMD [ \
     "uv", \
