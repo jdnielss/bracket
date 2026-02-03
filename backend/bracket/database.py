@@ -8,11 +8,12 @@ from bracket.config import config
 
 
 def datetime_decoder(value: str) -> datetime_utc:
-    value = value.split(".")[0].replace("+00", "+00:00")
+    value = value.replace("+00", "+00:00")
     return datetime_utc.fromisoformat(value)
 
 
 async def asyncpg_init(connection: Any) -> None:
+    await connection.execute("SET TIME ZONE 'Asia/Jakarta'")
     for timestamp_type in ("timestamp", "timestamptz"):
         await connection.set_type_codec(
             timestamp_type,

@@ -6,7 +6,6 @@ import {
   Image,
   Paper,
   PasswordInput,
-  Text,
   TextInput,
   Title,
   useMantineColorScheme,
