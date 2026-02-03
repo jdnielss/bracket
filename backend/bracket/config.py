@@ -33,7 +33,7 @@ class Config(BaseSettings):
     allow_user_registration: bool = True
     allow_demo_user_registration: bool = True
     captcha_secret: str | None = None
-    base_url: str = "http://localhost:8400"
+    base_url: str = "https://scoring.casafamiliapadel.club"
     cors_origin_regex: str = ""
     cors_origins: str = "*"
     jwt_secret: str
