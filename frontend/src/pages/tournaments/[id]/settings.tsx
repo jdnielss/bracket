@@ -127,7 +127,7 @@ function GeneralTournamentForm({
 
   const form = useForm({
     initialValues: {
-      start_time: dayjs(tournament.start_time),
+      start_time: dayjs(tournament.start_time).toDate(),
       name: tournament.name,
       club_id: `${tournament.club_id}`,
       dashboard_public: tournament.dashboard_public,
@@ -203,7 +203,7 @@ function GeneralTournamentForm({
               color="indigo"
               leftSection={<IconCalendarTime size="1.1rem" stroke={1.5} />}
               onClick={() => {
-                form.setFieldValue('start_time', dayjs());
+                form.setFieldValue('start_time', dayjs().toDate());
               }}
             >
               {t('set_to_new_button')}
