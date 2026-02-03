@@ -9,6 +9,7 @@ import {
   Text,
   TextInput,
   Title,
+  useMantineColorScheme,
 } from '@mantine/core';
 import { useForm } from '@mantine/form';
 import { showNotification } from '@mantine/notifications';
@@ -22,6 +23,7 @@ import { performLogin } from '@services/user';
 
 export default function LoginPage() {
   const navigate = useNavigate();
+  const { colorScheme } = useMantineColorScheme();
   const { t } = useTranslation();
   useEffect(() => {
     if (tokenPresent()) {
@@ -58,8 +60,8 @@ export default function LoginPage() {
   return (
     <>
     <Center mt={30}>
-        <Image src="/logo-white.png" alt="Casa Familia Scoring System" w={{ base: 300, xs: 500 }} />
-      </Center>
+        <Image src={colorScheme === 'dark' ? '/logo-white.png' : '/logo.png'} alt="Casa Familia Scoring System" w={{ base: 300, xs: 500 }} />
+    </Center>
       <Title ta="center" size="h2" fz={{ base: 24, xs: 32 }}>
         {t('welcome_title')}{' '}Casa Familia Scoring System
       </Title>
