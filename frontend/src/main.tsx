@@ -17,7 +17,6 @@ import HomePage from './pages';
 import NotFoundPage from './pages/404';
 import ClubsPage from './pages/clubs';
 import CreateAccountPage from './pages/create_account';
-import CreateDemoAccountPage from './pages/demo';
 import LoginPage from './pages/login';
 import PasswordResetPage from './pages/password_reset';
 import DashboardSchedulePage from './pages/tournaments/[id]/dashboard';
@@ -77,7 +76,6 @@ createRoot(document.getElementById('root')!).render(
               <Route index element={<HomePage />} />
               <Route path="/login" element={<LoginPage />} />
               <Route path="/clubs" element={<ClubsPage />} />
-              <Route path="/demo" element={<CreateDemoAccountPage />} />
               <Route path="/user" element={<UserPage />} />
               <Route path="/password-reset" element={<PasswordResetPage />} />
               <Route path="/create-account" element={<CreateAccountPage />} />

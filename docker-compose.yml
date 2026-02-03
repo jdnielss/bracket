@@ -8,16 +8,19 @@ volumes:
 
 services:
   bracket:
+    build:
+      context: .
+      dockerfile: Dockerfile
     container_name: bracket
-    depends_on:
-      - postgres
+    # depends_on:
+    #   - postgres
     environment:
       ENVIRONMENT: DEVELOPMENT
       CORS_ORIGINS: http://localhost:8400
-      PG_DSN: postgresql://bracket_dev:bracket_dev@postgres:5432/bracket_dev
+      PG_DSN: postgresql://root:3QBvh6cFgu70xsZW98t51w4eJ2jlNnKz@43.157.250.196:30996/bracket
       SERVE_FRONTEND: true
       API_PREFIX: '/api'
-    image: ghcr.io/evroon/bracket
+    image: bracket
     networks:
       - bracket_lan
     ports:
@@ -26,14 +29,14 @@ services:
     volumes:
       - bracket_static_data:/app/static
 
-  postgres:
-    environment:
-      POSTGRES_DB: bracket_dev
-      POSTGRES_PASSWORD: bracket_dev
-      POSTGRES_USER: bracket_dev
-    image: postgres
-    networks:
-      - bracket_lan
-    restart: always
-    volumes:
-      - bracket_pg_data:/var/lib/postgresql/data
+  # postgres:
+  #   environment:
+  #     POSTGRES_DB: bracket_dev
+  #     POSTGRES_PASSWORD: bracket_dev
+  #     POSTGRES_USER: bracket_dev
+  #   image: postgres
+  #   networks:
+  #     - bracket_lan
+  #   restart: always
+  #   volumes:
+  #     - bracket_pg_data:/var/lib/postgresql

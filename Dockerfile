@@ -13,7 +13,8 @@ RUN apk add pnpm && \
 
 # Build backend image that also serves frontend (stored in `/app/frontend-dist`)
 FROM python:3.14-alpine3.22
-COPY --from=ghcr.io/astral-sh/uv:latest /uv /uvx /bin/
+# Install uv via pip to avoid ghcr.io auth issues
+RUN pip install uv
 
 RUN rm -rf /var/cache/apk/*
 
