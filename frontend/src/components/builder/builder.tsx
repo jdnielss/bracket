@@ -419,7 +419,7 @@ function StageColumn({
       <Group justify="space-between">
         <Group>
           {stage.name}
-          {stage.is_active ? <Badge color="green">{t('active_badge_label')}</Badge> : null}
+          {stage.is_active ? <Badge color="brand">{t('active_badge_label')}</Badge> : null}
         </Group>
         <Menu withinPortal position="bottom-end" shadow="sm">
           <Menu.Target>

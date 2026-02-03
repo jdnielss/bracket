@@ -50,7 +50,7 @@ function AddRoundButton({
 }) {
   return (
     <Button
-      color="green"
+      color="brand"
       size={size}
       leftSection={<GoPlus size={24} />}
       variant="outline"
@@ -203,7 +203,7 @@ function NoRoundsAlert({ readOnly }: { readOnly: boolean }) {
       <Alert
         icon={<IconAlertCircle size={16} />}
         title={t('no_round_found_title')}
-        color="blue"
+        color="brand"
         radius="lg"
       >
         {t('no_round_found_description')}
@@ -215,7 +215,7 @@ function NoRoundsAlert({ readOnly }: { readOnly: boolean }) {
       <Alert
         icon={<IconAlertCircle size={16} />}
         title={t('no_round_found_title')}
-        color="blue"
+        color="brand"
         radius="lg"
       >
         {t('no_round_found_in_stage_description')}

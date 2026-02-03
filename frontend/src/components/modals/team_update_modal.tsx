@@ -123,14 +123,14 @@ export default function TeamUpdateModal({
             </Button>
           </Fieldset>
 
-          <Button fullWidth style={{ marginTop: 10 }} color="green" type="submit">
+          <Button fullWidth style={{ marginTop: 10 }} color="brand" type="submit">
             {t('save_button')}
           </Button>
         </form>
       </Modal>
 
       <Button
-        color="green"
+        color="brand"
         size="xs"
         style={{ marginRight: 10 }}
         onClick={() => setOpened(true)}

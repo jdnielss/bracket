@@ -175,7 +175,7 @@ function MatchModalForm({
           </Grid.Col>
         </Grid>
 
-        <Button fullWidth style={{ marginTop: 20 }} color="green" type="submit">
+        <Button fullWidth style={{ marginTop: 20 }} color="brand" type="submit">
           {t('save_button')}
         </Button>
       </form>

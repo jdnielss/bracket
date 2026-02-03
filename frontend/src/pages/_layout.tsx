@@ -76,6 +76,7 @@ export function HeaderAction({ links, navbarState, breadcrumbs }: HeaderActionPr
         className={classes.link}
         href={link.link || ''}
         data-active={pathName === link.link || undefined}
+        color="brand"
       >
         {link.label}
       </PreloadLink>
@@ -110,7 +111,7 @@ export function HeaderAction({ links, navbarState, breadcrumbs }: HeaderActionPr
 
 function NavBar({ links }: any) {
   return (
-    <AppShell.Navbar p="md">
+    <AppShell.Navbar p="md" color="brand">
       {links == null ? (
         <AppShell.Section grow>
           <div />

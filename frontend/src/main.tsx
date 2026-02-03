@@ -36,6 +36,18 @@ import UserPage from './pages/user';
 
 const theme = createTheme({
   colors: {
+    brand: [
+      '#e5eeeb',
+      '#ccddd8',
+      '#a6c3bb',
+      '#80aa9e',
+      '#5a9080',
+      '#347763',
+      '#02553d',
+      '#014c36',
+      '#014430',
+      '#013b2a',
+    ],
     dark: [
       '#C1C2C5',
       '#A6A7AB',
@@ -49,6 +61,7 @@ const theme = createTheme({
       '#101113',
     ],
   },
+  primaryColor: 'brand',
 });
 
 function AnalyticsScript() {

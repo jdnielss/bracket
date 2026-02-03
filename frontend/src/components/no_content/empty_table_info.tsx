@@ -18,7 +18,7 @@ export function EmptyTableInfo({
     <Alert
       icon={<IconAlertCircle size={16} />}
       title={`No ${entity_name} found`}
-      color="blue"
+      color="brand"
       radius="lg"
       mt={8}
     >

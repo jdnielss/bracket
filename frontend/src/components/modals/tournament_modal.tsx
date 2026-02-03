@@ -165,7 +165,7 @@ function GeneralTournamentForm({
         {...form.getInputProps('auto_assign_courts', { type: 'checkbox' })}
       />
 
-      <Button fullWidth mt={8} color="green" type="submit">
+      <Button fullWidth mt={8} color="brand" type="submit">
         {t('save_button')}
       </Button>
     </form>

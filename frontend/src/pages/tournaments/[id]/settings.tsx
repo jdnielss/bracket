@@ -300,7 +300,7 @@ function GeneralTournamentForm({
         fullWidth
         mt={24}
         size="md"
-        color="green"
+        color="brand"
         type="submit"
         leftSection={<IconPencil size={36} />}
       >

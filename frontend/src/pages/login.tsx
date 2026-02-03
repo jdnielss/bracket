@@ -1,7 +1,9 @@
 import {
   Anchor,
   Button,
+  Center,
   Container,
+  Image,
   Paper,
   PasswordInput,
   Text,
@@ -55,35 +57,15 @@ export default function LoginPage() {
 
   return (
     <>
-      <Title ta="center" mt={100}>
-        {t('welcome_title')}{' '}
-        <Text inherit variant="gradient" component="span">
-          Casa Familia Scoring System
-        </Text>
+    <Center mt={30}>
+        <Image src="/logo-white.png" alt="Casa Familia Scoring System" w={{ base: 300, xs: 500 }} />
+      </Center>
+      <Title ta="center" size="h2" fz={{ base: 24, xs: 32 }}>
+        {t('welcome_title')}{' '}Casa Familia Scoring System
       </Title>
+      
       <Container size={480} my={40}>
-        <Paper withBorder shadow="md" p={30} pt={8} mt={30} radius="md">
-          {/*<Button*/}
-          {/*  size="md"*/}
-          {/*  fullWidth*/}
-          {/*  mt="lg"*/}
-          {/*  type="submit"*/}
-          {/*  c="gray"*/}
-          {/*  leftSection={<FaGithub size={20} />}*/}
-          {/*>*/}
-          {/*  Continue with GitHub*/}
-          {/*</Button>*/}
-          {/*<Button*/}
-          {/*  size="md"*/}
-          {/*  fullWidth*/}
-          {/*  mt="lg"*/}
-          {/*  type="submit"*/}
-          {/*  c="indigo"*/}
-          {/*  leftSection={<FaGoogle size={20} />}*/}
-          {/*>*/}
-          {/*  Continue with Google*/}
-          {/*</Button>*/}
-          {/*<Divider label="Or continue with email" labelPosition="center" my="lg" />*/}
+        <Paper withBorder shadow="md" p={{ base: 20, xs: 30 }} pt={8} mt={30} radius="md">
           <form
             onSubmit={form.onSubmit(async (values) => attemptLogin(values.email, values.password))}
           >

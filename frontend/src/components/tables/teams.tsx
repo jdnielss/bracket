@@ -42,7 +42,7 @@ export default function TeamsTable({
       <Table.Tr key={team.id}>
         <Table.Td>
           {team.active ? (
-            <Badge color="green">{t('active')}</Badge>
+            <Badge color="brand">{t('active')}</Badge>
           ) : (
             <Badge color="red">{t('inactive')}</Badge>
           )}

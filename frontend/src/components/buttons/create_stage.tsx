@@ -27,7 +27,7 @@ export default function CreateStageButton({
   return (
     <Button
       variant="outline"
-      color="green"
+      color="brand"
       size="xs"
       style={{ marginRight: 10 }}
       onClick={async () => {
@@ -55,7 +55,7 @@ export function CreateStageButtonLarge({
   return (
     <Button
       variant="outline"
-      color="green"
+      color="brand"
       size="lg"
       style={{ marginRight: 10 }}
       onClick={async () => {

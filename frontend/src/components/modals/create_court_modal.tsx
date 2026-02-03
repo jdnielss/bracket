@@ -46,14 +46,14 @@ export default function CourtModal({
             {...form.getInputProps('name')}
           />
 
-          <Button fullWidth style={{ marginTop: 10 }} color="green" type="submit">
+          <Button fullWidth style={{ marginTop: 10 }} color="brand" type="submit">
             {t('save_button')}
           </Button>
         </form>
       </Modal>
       <Button
         variant="outline"
-        color="green"
+        color="brand"
         size={buttonSize}
         style={{ marginRight: 10 }}
         onClick={() => setOpened(true)}

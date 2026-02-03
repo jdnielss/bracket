@@ -119,7 +119,7 @@ function EditRankingForm({
             label={t('add_score_points_label')}
             {...form.getInputProps('add_score_points', { type: 'checkbox' })}
           />
-          <Button fullWidth style={{ marginTop: 16 }} color="green" type="submit">
+          <Button fullWidth style={{ marginTop: 16 }} color="brand" type="submit">
             {`${t('save_button')} ${rankingTitle}`}
           </Button>
         </Accordion.Panel>
@@ -189,7 +189,7 @@ export default function RankingsPage() {
         <Button
           fullWidth
           mt="1rem"
-          color="green"
+          color="brand"
           variant="outline"
           onClick={async () => {
             await createRanking(tournamentDataFull.id);

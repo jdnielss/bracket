@@ -25,7 +25,7 @@ export default function TournamentLayout({ children, tournament_id }: any) {
 
       <Tooltip label={`${t('archived_header_label')}`}>
         <ThemeIcon
-          color="yellow"
+          color="brand"
           variant="light"
           style={{
             visibility: tournamentResponse.data?.data.status === 'ARCHIVED' ? 'visible' : 'hidden',

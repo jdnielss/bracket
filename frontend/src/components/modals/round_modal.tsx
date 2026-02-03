@@ -78,14 +78,14 @@ export default function RoundModal({
             placeholder={t('round_name_input_placeholder')}
             {...form.getInputProps('name')}
           />
-          <Button fullWidth mt="1rem" color="green" type="submit">
+          <Button fullWidth mt="1rem" color="brand" type="submit">
             {t('save_button')}
           </Button>
         </form>
         <Button
           fullWidth
           mt="1rem"
-          color="yellow"
+          color="brand"
           variant="outline"
           disabled={round.is_draft}
           leftSection={<LuConstruction />}

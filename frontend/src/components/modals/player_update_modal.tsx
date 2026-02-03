@@ -21,7 +21,7 @@ export default function PlayerUpdateModal({
   const [opened, setOpened] = useState(false);
   const modalOpenButton = (
     <Button
-      color="green"
+      color="brand"
       size="xs"
       style={{ marginRight: 10 }}
       onClick={() => setOpened(true)}
@@ -64,7 +64,7 @@ export default function PlayerUpdateModal({
             {...form.getInputProps('active', { type: 'checkbox' })}
           />
 
-          <Button fullWidth style={{ marginTop: 10 }} color="green" type="submit">
+          <Button fullWidth style={{ marginTop: 10 }} color="brand" type="submit">
             {t('save_button')}
           </Button>
         </form>

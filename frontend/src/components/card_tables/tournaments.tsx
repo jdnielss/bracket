@@ -81,7 +81,7 @@ export default function TournamentsCardTable({
               <Group w="100%">
                 <Badge
                   fullWidth
-                  color="yellow"
+                  color="brand"
                   variant="outline"
                   size="lg"
                   style={{ visibility: tournament.status === 'ARCHIVED' ? 'visible' : 'hidden' }}
@@ -90,7 +90,7 @@ export default function TournamentsCardTable({
                 </Badge>
                 <Button
                   component={PreloadLink}
-                  color="blue"
+                  color="brand"
                   fullWidth
                   radius="md"
                   href={`/tournaments/${tournament.id}/stages`}

@@ -230,7 +230,7 @@ export function CreateStageItemModal({
           <Divider mt="1rem" />
           <TeamCountInput form={form} />
 
-          <Button fullWidth mt="1.5rem" color="green" type="submit">
+          <Button fullWidth mt="1.5rem" color="brand" type="submit">
             {t('create_stage_item_button')}
           </Button>
         </form>
@@ -238,7 +238,7 @@ export function CreateStageItemModal({
 
       <Button
         variant="outline"
-        color="green"
+        color="brand"
         size="xs"
         onClick={() => setOpened(true)}
         leftSection={<GoPlus size={24} />}

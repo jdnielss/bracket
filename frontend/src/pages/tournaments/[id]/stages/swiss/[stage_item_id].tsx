@@ -36,7 +36,7 @@ function NoCourtsButton({ t, tournamentData }: { t: Translator; tournamentData: 
     <Stack align="center">
       <NoContent title={t('no_courts_title')} description={t('no_courts_description_swiss')} />
       <Button
-        color="green"
+        color="brand"
         size="lg"
         leftSection={<LuNavigation size={24} />}
         variant="outline"
@@ -183,7 +183,7 @@ export default function SwissTournamentPage() {
             {tournamentDataFull?.dashboard_endpoint && (
               <Button
                 className={classes.fullWithMobile}
-                color="blue"
+                color="brand"
                 size="sm"
                 variant="outline"
                 leftSection={<IconExternalLink size={24} />}

@@ -70,7 +70,7 @@ export default function UpcomingMatchesTable({
       >
         <Table.Td>
           {upcoming_match.is_recommended ? (
-            <Badge leftSection={<IconCheck size={18} />} color="blue">
+            <Badge leftSection={<IconCheck size={18} />} color="brand">
               {t('recommended_badge_title')}
             </Badge>
           ) : null}
@@ -91,7 +91,7 @@ export default function UpcomingMatchesTable({
         <Table.Td>{Number(upcoming_match.swiss_diff).toFixed(1)}</Table.Td>
         <Table.Td>
           <Button
-            color="green"
+            color="brand"
             size="xs"
             style={{ marginRight: 10 }}
             onClick={async () => scheduleMatch(upcoming_match)}
@@ -113,7 +113,7 @@ export default function UpcomingMatchesTable({
         />
         <Center>
           <Button
-            color="green"
+            color="brand"
             size="lg"
             variant="outline"
             miw="20rem"

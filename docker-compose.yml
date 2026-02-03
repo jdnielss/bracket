@@ -17,7 +17,7 @@ services:
     environment:
       ENVIRONMENT: DEVELOPMENT
       CORS_ORIGINS: http://localhost:8400
-      PG_DSN: postgresql://root:3QBvh6cFgu70xsZW98t51w4eJ2jlNnKz@43.157.250.196:30996/bracket
+      PG_DSN: postgresql://root:3tzm1TJa5hHsN6x2oMe9q7QB80SdbZu4@43.157.250.196:32030/bracket
       SERVE_FRONTEND: true
       API_PREFIX: '/api'
     image: bracket
