@@ -16,9 +16,7 @@ import { BracketSpotlight } from './components/modals/spotlight';
 import HomePage from './pages';
 import NotFoundPage from './pages/404';
 import ClubsPage from './pages/clubs';
-import CreateAccountPage from './pages/create_account';
 import LoginPage from './pages/login';
-import PasswordResetPage from './pages/password_reset';
 import DashboardSchedulePage from './pages/tournaments/[id]/dashboard';
 import DashboardNotFoundPage from './pages/tournaments/[id]/dashboard/dashboard_404';
 import CourtsPresentPage from './pages/tournaments/[id]/dashboard/present/courts';
@@ -90,8 +88,6 @@ createRoot(document.getElementById('root')!).render(
               <Route path="/login" element={<LoginPage />} />
               <Route path="/clubs" element={<ClubsPage />} />
               <Route path="/user" element={<UserPage />} />
-              <Route path="/password-reset" element={<PasswordResetPage />} />
-              <Route path="/create-account" element={<CreateAccountPage />} />
 
               <Route path="/tournaments">
                 <Route path=":id">

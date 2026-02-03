@@ -14,12 +14,9 @@ services:
     container_name: bracket
     # depends_on:
     #   - postgres
-    environment:
-      ENVIRONMENT: DEVELOPMENT
-      CORS_ORIGINS: http://localhost:8400
-      PG_DSN: postgresql://root:3tzm1TJa5hHsN6x2oMe9q7QB80SdbZu4@43.157.250.196:32030/bracket
-      SERVE_FRONTEND: true
-      API_PREFIX: '/api'
+    env_file:
+      - .env
+    
     image: bracket
     networks:
       - bracket_lan
