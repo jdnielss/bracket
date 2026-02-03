@@ -1,4 +1,4 @@
-import { Dayjs } from 'dayjs';
+import dayjs, { Dayjs } from 'dayjs';
 import { createAxios, handleRequestError } from './adapter';
 
 export async function createRound(tournament_id: number, stage_item_id: number) {
@@ -33,7 +33,7 @@ export async function startNextRound(
 ) {
   return createAxios()
     .post(`tournaments/${tournament_id}/stage_items/${stage_item_id}/start_next_round`, {
-      adjust_to_time: adjust_to_time != null ? adjust_to_time?.toISOString() : null,
+      adjust_to_time: adjust_to_time != null ? dayjs(adjust_to_time).toISOString() : null,
     })
     .catch((response: any) => handleRequestError(response));
 }
