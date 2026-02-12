@@ -1,4 +1,4 @@
-import { Center, Group, Image, Text, Title, UnstyledButton } from '@mantine/core';
+import { Center, Group, Image, Stack, Text, Title, UnstyledButton } from '@mantine/core';
 
 import PreloadLink from '@components/utils/link';
 
@@ -12,7 +12,7 @@ export function Brand() {
             src="/logo.png"
             alt="Casa Familia"
           />
-          <Title style={{ height: '38px', marginBottom: '0.4rem' }}>Casa Familia</Title>
+          <Title style={{ height: '38px', marginBottom: '0.4rem' }}>Casa Familia Scoring System</Title>
         </Group>
       </UnstyledButton>
     </Center>
@@ -21,18 +21,17 @@ export function Brand() {
 
 export function BrandFooter() {
   return (
-    <Center mr="1rem">
-      <Center>
+    <Center w="100%">
+      <Stack align="center" gap="xs">
         <Image
-          mb="0.25rem"
-          style={{ width: '32px', marginRight: '0px' }}
+          style={{ width: '80px', marginRight: '0px' }}
           src="/logo.png"
           alt="Casa Familia"
         />
-        <Text size="xl" ml="0.75rem">
-          Casa Familia
+        <Text size="xl" ta="center">
+          Casa Familia Padel Scoring System
         </Text>
-      </Center>
+      </Stack>
     </Center>
   );
 }
