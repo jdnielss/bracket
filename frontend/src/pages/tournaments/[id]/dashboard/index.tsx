@@ -45,19 +45,12 @@ function ScheduleRow({
     <Card shadow="sm" radius="md" withBorder mt="md" pt="0rem">
       <Card.Section withBorder>
         <Grid pt="0.75rem" pb="0.5rem">
-          <Grid.Col mb="0rem" span={4}>
+          <Grid.Col mb="0rem" span={6}>
             <Text pl="sm" mt="sm" fw={800}>
               {data.match.court.name}
             </Text>
           </Grid.Col>
-          <Grid.Col mb="0rem" span={4}>
-            <Center>
-              <Text mt="sm" fw={800}>
-                {data.match.start_time != null ? <Time datetime={data.match.start_time} /> : null}
-              </Text>
-            </Center>
-          </Grid.Col>
-          <Grid.Col mb="0rem" span={4}>
+          <Grid.Col mb="0rem" span={6}>
             <Flex justify="right">
               <Badge
                 color={stringToColour(`${data.stageItem.id}`)}
@@ -133,39 +126,23 @@ export function Schedule({
     .sort(
       (m1: any, m2: any) =>
         compareDateTime(m1.match.start_time, m2.match.start_time) ||
+        m1.stageItem.name.localeCompare(m2.stageItem.name) ||
         m1.match.court?.name.localeCompare(m2.match.court?.name)
     );
 
-  const rows: React.JSX.Element[] = [];
-
-  for (let c = 0; c < sortedMatches.length; c += 1) {
-    const data = sortedMatches[c];
-
-    if (c < 1 || sortedMatches[c - 1].match.start_time) {
-      const startTime = formatTime(data.match.start_time);
-
-      if (c < 1 || startTime !== formatTime(sortedMatches[c - 1].match.start_time)) {
-        rows.push(
-          <Center mt="md" key={`time-${c}`}>
-            <Text size="xl" fw={800}>
-              {startTime}
-            </Text>
-          </Center>
-        );
-      }
+  // Group matches by time
+  const groupedMatches: { [key: string]: any[] } = {};
+  sortedMatches.forEach((match) => {
+    const time = formatTime(match.match.start_time);
+    if (!groupedMatches[time]) {
+      groupedMatches[time] = [];
     }
+    groupedMatches[time].push(match);
+  });
 
-    rows.push(
-      <ScheduleRow
-        key={data.match.id}
-        data={data}
-        stageItemsLookup={stageItemsLookup}
-        matchesLookup={matchesLookup}
-      />
-    );
-  }
+  const timeGroups = Object.keys(groupedMatches);
 
-  if (rows.length < 1) {
+  if (timeGroups.length < 1) {
     return <NoContent title={t('no_matches_title')} description="" icon={<AiOutlineHourglass />} />;
   }
 
@@ -182,12 +159,31 @@ export function Schedule({
     ) : null;
 
   return (
-    <Group wrap="nowrap" align="top" style={{ width: '100%' }}>
-      <div style={{ width: '100%' }}>
-        {rows}
-        {noItemsAlert}
-      </div>
-    </Group>
+    <Stack gap="xl" style={{ width: '100%' }}>
+      {timeGroups.map((time) => (
+        <div key={time}>
+          <Center mb="xs">
+            <Badge size="xl" variant="filled" color="dark" radius="sm" py="md" px="xl">
+              <Text size="xl" fw={800}>
+                {time}
+              </Text>
+            </Badge>
+          </Center>
+          <Grid gutter="md">
+            {groupedMatches[time].map((data) => (
+              <Grid.Col key={data.match.id} span={12}>
+                <ScheduleRow
+                  data={data}
+                  stageItemsLookup={stageItemsLookup}
+                  matchesLookup={matchesLookup}
+                />
+              </Grid.Col>
+            ))}
+          </Grid>
+        </div>
+      ))}
+      {noItemsAlert}
+    </Stack>
   );
 }
 export default function DashboardSchedulePage() {
