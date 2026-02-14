@@ -30,10 +30,18 @@ export function StandingsTableForStageItem({
   const maxPoints = Math.max(...teams_with_inputs.map((input) => parseFloat(input.points)));
 
   const rows = teams_with_inputs
-    .sort((p1: StageItemInputFinal, p2: StageItemInputFinal) => (p1.points > p2.points ? 1 : -1))
-    .sort((p1: StageItemInputFinal, p2: StageItemInputFinal) =>
-      sortTableEntries(p1, p2, tableState)
-    )
+    .sort((p1: StageItemInputFinal, p2: StageItemInputFinal) => {
+      if (tableState.sortField === 'points') {
+        const p1Points = parseFloat(p1.points);
+        const p2Points = parseFloat(p2.points);
+        if (p1Points !== p2Points) {
+          const order = p1Points > p2Points;
+          return (tableState.reversed ? order : !order) ? 1 : -1;
+        }
+        return p2.wins - p1.wins;
+      }
+      return sortTableEntries(p1, p2, tableState);
+    })
     .slice(0, maxTeamsToDisplay)
     .map((team_with_input, index) => (
       <Table.Tr key={team_with_input.id}>
